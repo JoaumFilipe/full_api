@@ -1,5 +1,5 @@
 import fastify from 'fastify'
-import { cities_router } from './domains/cities'
+import { cities_router } from './domains/cities/routers'
 import { validatorCompiler, serializerCompiler, ZodTypeProvider } from 'fastify-type-provider-zod'
 
 const server = fastify().withTypeProvider<ZodTypeProvider>()

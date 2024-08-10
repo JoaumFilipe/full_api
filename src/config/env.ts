@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 const envSchema = z.object({
-  PORT: z.string().transform((val) => Number(val)),
+  PORT: z.coerce.number(),
 })
 
 export const env = envSchema.parse(process.env)

@@ -8,10 +8,9 @@ export const formatErrorResponse = (err: FastifyError, _: FastifyRequest, reply:
 
   const error = err.errors.map((el) => {
     return {
-      statusCode: err.statusCode,
       error: err.code,
-      path: el.path,
       message: el.message,
+      path: el.path,
     }
   })
 
