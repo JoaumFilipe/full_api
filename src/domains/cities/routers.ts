@@ -1,13 +1,7 @@
 import type { FastifyInstance } from 'fastify'
 import { readCity, createCity, updateCity, deleteCity } from './controllers'
-import {
-  bodyCitySchema,
-  IBodyCitySchema,
-  queryCitySchema,
-  IQueryCitySchema,
-  paramsCitySchema,
-  IParamsCitySchema,
-} from './schemas'
+import type { IBodyCitySchema, IQueryCitySchema, IParamsCitySchema } from './schemas'
+import { bodyCitySchema, queryCitySchema, paramsCitySchema } from './schemas'
 import { formatErrorResponse } from '../../shared/error'
 
 async function cities_router(fastify: FastifyInstance) {
@@ -15,7 +9,9 @@ async function cities_router(fastify: FastifyInstance) {
   fastify.get<{ Querystring: IQueryCitySchema }>(
     '/cities',
     {
-      schema: { querystring: queryCitySchema },
+      schema: {
+        querystring: queryCitySchema,
+      },
       errorHandler: formatErrorResponse,
     },
     readCity
@@ -25,7 +21,9 @@ async function cities_router(fastify: FastifyInstance) {
   fastify.post<{ Body: IBodyCitySchema }>(
     '/cities',
     {
-      schema: { body: bodyCitySchema },
+      schema: {
+        body: bodyCitySchema,
+      },
       errorHandler: formatErrorResponse,
     },
     createCity
