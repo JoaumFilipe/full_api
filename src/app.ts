@@ -1,5 +1,5 @@
 import Fastify from 'fastify'
-import { cities_router } from './domains/cities/routers'
+import { cities_router } from './modules/cities/routers'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { validatorCompiler, serializerCompiler } from 'fastify-type-provider-zod'
 

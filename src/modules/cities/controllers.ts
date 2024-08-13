@@ -30,9 +30,11 @@ export const updateCity = (
   return reply.code(204).send()
 }
 
+// Handler to delete a city
+// This endpoint returns a success response with status code 200
 export const deleteCity = (
   request: FastifyRequest<{ Params: IParamsCitySchema }>,
   reply: FastifyReply
 ) => {
-  return reply.code(201).send(`${request.params.id}: Deleted`)
+  return reply.code(200).send(`${request.params.id}: Deleted`)
 }

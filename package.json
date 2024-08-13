@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx tsx --env-file=.env ./src/server.ts",
     "start:dev": "npx tsx watch --env-file=.env ./src/server.ts",
-    "test": "jest"
+    "test": "jest  --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
