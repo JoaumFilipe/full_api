@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "start:dev": "npx tsx watch --env-file=.env ./src/server.ts",
     "start": "node ./dist/server.js",
     "test": "jest  --detectOpenHandles"
