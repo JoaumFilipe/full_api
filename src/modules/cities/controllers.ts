@@ -24,7 +24,7 @@ export const createCity = (
 // Handler to update a new city
 // This endpoint returns a success response with status code 204
 export const updateCity = (
-  request: FastifyRequest<{ Body: IBodyCitySchema; Params: IParamsCitySchema }>,
+  _request: FastifyRequest<{ Body: IBodyCitySchema; Params: IParamsCitySchema }>,
   reply: FastifyReply
 ) => {
   return reply.code(204).send()
